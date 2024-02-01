@@ -15,7 +15,26 @@
     function() {
         'use strict';
 
-        console.log('点击')
+        let VEnable = localStorage.getItem('VEnable')=='true';
+        if(VEnable){
+            setTimeout(()=>{
+                document.getElementById('live-player').remove();
+            },3000)
+        }
+        let btnArea = document.querySelector('.right-ctnr');
+        let btn = document.createElement('button');
+        btn.textContent=VEnable?'恢复':'移除';
+        btn.addEventListener('click',()=>{
+            VEnable=!VEnable;
+            localStorage.setItem('VEnable',VEnable);
+            btn.textContent = VEnable?'恢复':'移除';
+            if(VEnable){
+                document.getElementById('live-player').remove();
+            }else{
+                location.reload();
+            }
+        });
+        btnArea.insertBefore(btn,btnArea.children[0]);
     }
 )
 
