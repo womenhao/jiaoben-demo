@@ -33,6 +33,7 @@
         featureBox.appendChild(inputLabel);
         featureBox.appendChild(inputBox);
         featureBox.appendChild(button);
+        
 
         // Append the feature box to the page
         document.body.appendChild(featureBox);
