@@ -14,28 +14,34 @@
 (
     function() {
         'use strict';
+        // Create the feature box HTML element
+        var featureBox = document.createElement('div');
+        featureBox.className = 'feature-box';
 
-        let VEnable = localStorage.getItem('VEnable')=='true';
-        if(VEnable){
-            setTimeout(()=>{
-                document.getElementById('live-player').remove();
-            },3000)
-        }
-        let btnArea = document.querySelector('.right-ctnr');
-        let btn = document.createElement('button');
-        btn.textContent=VEnable?'恢复':'移除';
-        btn.addEventListener('click',()=>{
-            VEnable=!VEnable;
-            localStorage.setItem('VEnable',VEnable);
-            btn.textContent = VEnable?'恢复':'移除';
-            if(VEnable){
-                document.getElementById('live-player').remove();
-            }else{
-                location.reload();
-            }
-        });
-        btnArea.insertBefore(btn,btnArea.children[0]);
+        // Add some content to the box
+        var inputLabel = document.createElement('label');
+        inputLabel.htmlFor = 'feature-box-input';
+        inputLabel.textContent = 'Enter your text here:';
+
+        var inputBox = document.createElement('input');
+        inputBox.id = 'feature-box-input';
+        inputBox.type = 'text';
+
+        var button = document.createElement('button');
+        button.textContent = 'Submit';
+
+        featureBox.appendChild(inputLabel);
+        featureBox.appendChild(inputBox);
+        featureBox.appendChild(button);
+
+        // Append the feature box to the page
+        document.body.appendChild(featureBox);
+
+
+
+
     }
+
 )
 
 ();
