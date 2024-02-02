@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Statement scripts
 // @namespace    http://tampermonkey.net/
-// @version      2024-02-01
+// @version      2024-02-02
 // @description  Automate click-and-click statement scripts
 // @author       women
 // @match        https://greasyfork.org/zh-CN/users/1255849-womenhao
@@ -33,7 +33,7 @@
         featureBox.appendChild(inputLabel);
         featureBox.appendChild(inputBox);
         featureBox.appendChild(button);
-        
+
 
         // Append the feature box to the page
         document.body.appendChild(featureBox);
